@@ -34,9 +34,14 @@ client.interceptors.response.use(
     }
     originalRequest._retry = true;
 
+    const { refreshToken } = useAuthStore.getState();
+    if (!refreshToken) {
+      useAuthStore.getState().clearAuth();
+      return Promise.reject(error);
+    }
+
     try {
       if (!refreshPromise) {
-        const { refreshToken } = useAuthStore.getState();
         refreshPromise = axios
           .post(`${baseURL}/api/auth/refresh`, { refresh_token: refreshToken })
           .finally(() => {

@@ -1,0 +1,614 @@
+:root {
+  /* 색상 */
+  --color-primary: #178a4f;
+  --color-primary-hover: #136e3f;
+  --color-bg: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-border: #dcdfe4;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b7280;
+  --color-link: #2563eb;
+  --color-danger: #dc2626;
+  --color-focus-ring: #178a4f;
+
+  /* 배지: 상태 */
+  --badge-active-bg: #dcfce7;
+  --badge-active-text: #166534;
+  --badge-scheduled-bg: #f3f4f6;
+  --badge-scheduled-text: #4b5563;
+  --badge-ended-bg: #f3f4f6;
+  --badge-ended-text: #9ca3af;
+
+  /* 배지: 유형 */
+  --badge-discount-bg: #ffe4e6;
+  --badge-discount-text: #9f1239;
+  --badge-gift-bg: #ffedd5;
+  --badge-gift-text: #9a3412;
+  --badge-tasting-bg: #dbeafe;
+  --badge-tasting-text: #1e40af;
+  --badge-game-text: #7c3aed;
+
+  /* 모서리/그림자 */
+  --radius-card: 12px;
+  --radius-input: 8px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  /* 여백 */
+  --space-page-padding: 24px;
+  --space-card-padding: 24px;
+  --space-field-gap: 16px;
+
+  /* 폰트 */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 인증(로그인/회원가입) 페이지 */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-page-padding);
+}
+
+.auth-brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 32px 0;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-card-padding);
+}
+
+.auth-card h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 var(--space-field-gap);
+}
+
+.form-field {
+  margin-bottom: var(--space-field-gap);
+}
+
+.form-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-field input {
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-input);
+  padding: 12px;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--color-focus-ring);
+  box-shadow: 0 0 0 1px var(--color-focus-ring);
+}
+
+.btn-primary {
+  width: 100%;
+  height: 44px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field-error {
+  color: var(--color-danger);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.form-footer {
+  margin-top: var(--space-field-gap);
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.form-footer a {
+  color: var(--color-link);
+}
+
+/* 공통 헤더 */
+.app-header {
+  height: 56px;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-page-padding);
+}
+
+.app-header-brand {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.app-header-menu {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  margin-left: 32px;
+}
+
+.app-header-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.app-header-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.app-header-logout {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: var(--radius-pill);
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.app-header-hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 56px;
+    padding: 12px var(--space-page-padding);
+  }
+
+  .app-header-hamburger {
+    display: block;
+  }
+
+  .app-header-menu,
+  .app-header-user {
+    display: none;
+  }
+
+  .app-header.menu-open .app-header-menu,
+  .app-header.menu-open .app-header-user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 100%;
+    width: 100%;
+    margin: 12px 0 0;
+    gap: 12px;
+  }
+
+  .app-header.menu-open .app-header-user {
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* 프로모션 목록 페이지 */
+.promotion-list-page {
+  padding: var(--space-page-padding);
+}
+
+.promotion-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0 24px;
+}
+
+.promotion-tab {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.promotion-tab.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.list-status-message {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.promotion-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .promotion-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 프로모션 카드 */
+.promotion-card {
+  display: block;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-card-padding);
+  text-decoration: none;
+  color: inherit;
+}
+
+.promotion-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.promotion-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.promotion-card-period {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* 배지 */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-status-active {
+  background: var(--badge-active-bg);
+  color: var(--badge-active-text);
+}
+
+.badge-status-scheduled {
+  background: var(--badge-scheduled-bg);
+  color: var(--badge-scheduled-text);
+}
+
+.badge-status-ended {
+  background: var(--badge-ended-bg);
+  color: var(--badge-ended-text);
+}
+
+.badge-type-discount {
+  background: var(--badge-discount-bg);
+  color: var(--badge-discount-text);
+}
+
+.badge-type-gift {
+  background: var(--badge-gift-bg);
+  color: var(--badge-gift-text);
+}
+
+.badge-type-tasting {
+  background: var(--badge-tasting-bg);
+  color: var(--badge-tasting-text);
+}
+
+.badge-game {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--badge-game-text);
+}
+
+/* 프로모션 상세 페이지 */
+.promotion-detail {
+  padding: var(--space-page-padding);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.promotion-detail-header {
+  margin-bottom: 16px;
+}
+
+.promotion-detail-description {
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.promotion-game-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  margin: 16px 0;
+}
+
+.promotion-prize-list {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.apply-section {
+  margin-top: 24px;
+}
+
+.apply-blocked-message,
+.apply-error-message {
+  color: var(--color-danger);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.apply-success-message {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* 마이페이지 */
+.mypage-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 16px;
+}
+
+.mypage-tab {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-muted, #888);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.mypage-tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.field-readonly {
+  padding: 12px;
+  font-size: 15px;
+  color: var(--color-text-muted, #888);
+}
+
+/* 룰렛 추첨 모달 */
+.roulette-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.roulette-modal {
+  width: 100%;
+  max-width: 360px;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-card-padding);
+  text-align: center;
+}
+
+.roulette-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.roulette-modal-header button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.roulette-wheel {
+  font-size: 64px;
+  margin: 24px 0;
+}
+
+.roulette-wheel.spinning {
+  animation: roulette-spin 1s linear infinite;
+}
+
+@keyframes roulette-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.roulette-result p {
+  margin: 8px 0;
+}
+
+/* 내 신청 목록 페이지 */
+.my-applications-table-wrapper {
+  overflow-x: auto;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.my-applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.my-applications-table th,
+.my-applications-table td {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.my-applications-table th {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.applicants-summary {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.btn-cancel {
+  background: transparent;
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  border-radius: var(--radius-pill);
+  padding: 4px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.admin-list-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 프로모션 등록/수정 폼 */
+.radio-group {
+  display: flex;
+  gap: 16px;
+}
+
+.form-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field textarea {
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-input);
+  padding: 12px;
+  font-size: 15px;
+  color: var(--color-text);
+  min-height: 96px;
+  resize: vertical;
+}
+
+.prize-list-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  margin-bottom: var(--space-field-gap);
+}
+
+.prize-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.prize-row input {
+  flex: 1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.form-actions .btn-primary {
+  width: auto;
+  flex: 1;
+}
+
+.btn-secondary {
+  flex: 1;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -129,6 +129,20 @@ describe('client 응답 인터셉터 (401 처리)', () => {
     expect(useAuthStore.getState().accessToken).toBe('new-access');
   });
 
+  it('refreshToken이 없으면 refresh를 호출하지 않고 즉시 reject하며 인증정보를 클리어한다', async () => {
+    useAuthStore.getState().setAuth({ user: null, accessToken: 'old-access', refreshToken: null });
+
+    const originalRequest = { url: '/api/auth/login', headers: {} };
+    const error = make401Error(originalRequest);
+
+    await expect(responseErrorInterceptor(error)).rejects.toBe(error);
+
+    expect(axios.post).not.toHaveBeenCalled();
+    expect(client).not.toHaveBeenCalled();
+    expect(useAuthStore.getState().accessToken).toBeNull();
+    expect(useAuthStore.getState().refreshToken).toBeNull();
+  });
+
   it('refresh 실패 시 인증정보를 클리어하고 reject한다', async () => {
     useAuthStore.getState().setAuth({ user: null, accessToken: 'old-access', refreshToken: 'invalid-refresh' });
     const refreshError = new Error('refresh failed');
