@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="'Segoe UI', Arial, sans-serif">
+  <!-- page background -->
+  <rect x="0" y="0" width="1000" height="700" fill="#f4f5f7"/>
+  <rect x="0.5" y="0.5" width="999" height="699" fill="none" stroke="#d0d4da"/>
+
+  <!-- header -->
+  <rect x="0" y="0" width="1000" height="64" fill="#1f2937"/>
+  <text x="24" y="40" fill="#ffffff" font-size="20" font-weight="700">b2b-promo</text>
+  <text x="600" y="38" fill="#e5e7eb" font-size="14">프로모션</text>
+  <text x="690" y="38" fill="#9ca3af" font-size="14">내 신청</text>
+  <text x="770" y="38" fill="#9ca3af" font-size="14">마이페이지</text>
+  <text x="900" y="38" fill="#9ca3af" font-size="14">로그아웃</text>
+
+  <!-- page title -->
+  <text x="24" y="106" fill="#111827" font-size="22" font-weight="700">프로모션 목록</text>
+
+  <!-- tabs -->
+  <rect x="24" y="126" width="90" height="34" rx="6" fill="#2563eb"/>
+  <text x="45" y="148" fill="#ffffff" font-size="14" font-weight="600">진행중</text>
+  <rect x="122" y="126" width="90" height="34" rx="6" fill="#ffffff" stroke="#d0d4da"/>
+  <text x="150" y="148" fill="#4b5563" font-size="14">예정</text>
+  <line x1="24" y1="176" x2="976" y2="176" stroke="#e5e7eb"/>
+
+  <!-- card template function via reuse: draw 4 cards, 2x2 grid -->
+  <!-- Card A: 진행중, 게임 적용 -->
+  <g>
+    <rect x="24" y="200" width="450" height="200" rx="10" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="44" y="220" width="60" height="24" rx="12" fill="#dbeafe"/>
+    <text x="55" y="236" fill="#1d4ed8" font-size="12" font-weight="600">진행중</text>
+    <text x="44" y="272" fill="#111827" font-size="18" font-weight="700">여름 특가 식자재 할인</text>
+    <text x="44" y="300" fill="#4b5563" font-size="14">유형: 가격할인</text>
+    <text x="44" y="322" fill="#4b5563" font-size="14">기간: ~08/20</text>
+    <rect x="44" y="336" width="88" height="24" rx="12" fill="#fef3c7"/>
+    <text x="54" y="352" fill="#92400e" font-size="12" font-weight="600">🎯 게임 적용</text>
+    <rect x="360" y="352" width="94" height="32" rx="6" fill="#2563eb"/>
+    <text x="378" y="373" fill="#ffffff" font-size="13" font-weight="600">상세보기</text>
+  </g>
+
+  <!-- Card B: 진행중, no game -->
+  <g>
+    <rect x="498" y="200" width="450" height="200" rx="10" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="518" y="220" width="60" height="24" rx="12" fill="#dbeafe"/>
+    <text x="529" y="236" fill="#1d4ed8" font-size="12" font-weight="600">진행중</text>
+    <text x="518" y="272" fill="#111827" font-size="18" font-weight="700">신제품 소스 증정 이벤트</text>
+    <text x="518" y="300" fill="#4b5563" font-size="14">유형: 사은품 증정</text>
+    <text x="518" y="322" fill="#4b5563" font-size="14">기간: ~08/25</text>
+    <rect x="834" y="352" width="94" height="32" rx="6" fill="#2563eb"/>
+    <text x="852" y="373" fill="#ffffff" font-size="13" font-weight="600">상세보기</text>
+  </g>
+
+  <!-- Card C: 예정 -->
+  <g>
+    <rect x="24" y="420" width="450" height="160" rx="10" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="44" y="440" width="60" height="24" rx="12" fill="#f3f4f6"/>
+    <text x="58" y="456" fill="#4b5563" font-size="12" font-weight="600">예정</text>
+    <text x="44" y="492" fill="#111827" font-size="18" font-weight="700">가을 신메뉴 시식회</text>
+    <text x="44" y="518" fill="#4b5563" font-size="14">유형: 신제품 시식</text>
+    <rect x="360" y="532" width="94" height="32" rx="6" fill="#e5e7eb"/>
+    <text x="378" y="553" fill="#374151" font-size="13" font-weight="600">상세보기</text>
+  </g>
+
+  <!-- Card D: 예정 -->
+  <g>
+    <rect x="498" y="420" width="450" height="160" rx="10" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="518" y="440" width="60" height="24" rx="12" fill="#f3f4f6"/>
+    <text x="532" y="456" fill="#4b5563" font-size="12" font-weight="600">예정</text>
+    <text x="518" y="492" fill="#111827" font-size="18" font-weight="700">추석 선물세트 할인</text>
+    <text x="518" y="518" fill="#4b5563" font-size="14">유형: 가격할인</text>
+    <rect x="834" y="532" width="94" height="32" rx="6" fill="#e5e7eb"/>
+    <text x="852" y="553" fill="#374151" font-size="13" font-weight="600">상세보기</text>
+  </g>
+
+  <!-- pagination -->
+  <g font-size="14" fill="#4b5563">
+    <text x="420" y="630">이전</text>
+    <rect x="470" y="610" width="26" height="26" rx="4" fill="#2563eb"/>
+    <text x="479" y="628" fill="#ffffff" font-weight="700">1</text>
+    <text x="510" y="630">2</text>
+    <text x="535" y="630">3</text>
+    <text x="565" y="630">다음</text>
+  </g>
+</svg>

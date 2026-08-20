@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif">
+  <!-- 스타일 토큰 (docs/10-style.md 2/4절) -->
+  <defs>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- 페이지 배경 (color-bg) -->
+  <rect x="0" y="0" width="1200" height="620" fill="#f5f6f8"/>
+
+  <!-- 내비게이션 바 (5.5절: color-primary, height 56) -->
+  <rect x="0" y="0" width="1200" height="56" fill="#178a4f"/>
+  <text x="32" y="35" font-size="18" font-weight="700" fill="#ffffff">CJ-Promo</text>
+  <text x="140" y="35" font-size="14" fill="#ffffff">프로모션</text>
+  <text x="216" y="35" font-size="14" fill="#ffffff">내 신청</text>
+  <text x="1168" y="35" font-size="14" fill="#ffffff" text-anchor="end">이수진 ▾</text>
+
+  <!-- 페이지 타이틀 (와이어프레임 3번 화면) -->
+  <text x="32" y="104" font-size="20" font-weight="700" fill="#1a1a1a">프로모션 목록</text>
+
+  <!-- 상태 탭 (와이어프레임 3번: [진행][예정], pill 버튼 스타일 5.1/4절) -->
+  <rect x="32" y="124" width="64" height="32" rx="16" fill="#178a4f"/>
+  <text x="64" y="145" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">진행</text>
+  <rect x="104" y="124" width="64" height="32" rx="16" fill="#ffffff" stroke="#dcdfe4"/>
+  <text x="136" y="145" font-size="13" font-weight="600" fill="#4b5563" text-anchor="middle">예정</text>
+
+  <!-- 프로모션 카드 1: 사은품증정 + 게임 적용 -->
+  <g transform="translate(32,184)">
+    <rect width="362" height="180" rx="12" fill="#ffffff" filter="url(#card-shadow)"/>
+    <!-- 배지: 상태(진행) -->
+    <rect x="24" y="24" width="48" height="22" rx="11" fill="#dcfce7"/>
+    <text x="48" y="39" font-size="12" font-weight="500" fill="#166534" text-anchor="middle">진행중</text>
+    <!-- 배지: 유형(사은품증정) -->
+    <rect x="80" y="24" width="82" height="22" rx="11" fill="#ffedd5"/>
+    <text x="121" y="39" font-size="12" font-weight="500" fill="#9a3412" text-anchor="middle">사은품증정</text>
+    <!-- [게임] 표시 -->
+    <text x="170" y="39" font-size="12" font-weight="500" fill="#7c3aed">[게임]</text>
+    <!-- 카드 제목 -->
+    <text x="24" y="82" font-size="16" font-weight="600" fill="#1a1a1a">여름 특별 룰렛 이벤트</text>
+    <!-- 기간 (보조 텍스트) -->
+    <text x="24" y="106" font-size="13" fill="#6b7280">기간 01.01~12.31</text>
+    <!-- 상세보기 버튼 (secondary/outline, 5.1절) -->
+    <rect x="24" y="128" width="100" height="32" rx="8" fill="#ffffff" stroke="#dcdfe4"/>
+    <text x="74" y="149" font-size="13" font-weight="600" fill="#1a1a1a" text-anchor="middle">상세보기</text>
+  </g>
+
+  <!-- 프로모션 카드 2: 신제품시식 -->
+  <g transform="translate(418,184)">
+    <rect width="362" height="180" rx="12" fill="#ffffff" filter="url(#card-shadow)"/>
+    <rect x="24" y="24" width="48" height="22" rx="11" fill="#dcfce7"/>
+    <text x="48" y="39" font-size="12" font-weight="500" fill="#166534" text-anchor="middle">진행중</text>
+    <rect x="80" y="24" width="82" height="22" rx="11" fill="#dbeafe"/>
+    <text x="121" y="39" font-size="12" font-weight="500" fill="#1e40af" text-anchor="middle">신제품시식</text>
+    <text x="24" y="82" font-size="16" font-weight="600" fill="#1a1a1a">신제품 소스류 무료 시식 신청</text>
+    <text x="24" y="106" font-size="13" fill="#6b7280">기간 01.01~12.31</text>
+    <rect x="24" y="128" width="100" height="32" rx="8" fill="#ffffff" stroke="#dcdfe4"/>
+    <text x="74" y="149" font-size="13" font-weight="600" fill="#1a1a1a" text-anchor="middle">상세보기</text>
+  </g>
+
+  <!-- 프로모션 카드 3: 가격할인 -->
+  <g transform="translate(804,184)">
+    <rect width="362" height="180" rx="12" fill="#ffffff" filter="url(#card-shadow)"/>
+    <rect x="24" y="24" width="48" height="22" rx="11" fill="#dcfce7"/>
+    <text x="48" y="39" font-size="12" font-weight="500" fill="#166534" text-anchor="middle">진행중</text>
+    <rect x="80" y="24" width="70" height="22" rx="11" fill="#ffe4e6"/>
+    <text x="115" y="39" font-size="12" font-weight="500" fill="#9f1239" text-anchor="middle">가격할인</text>
+    <text x="24" y="82" font-size="16" font-weight="600" fill="#1a1a1a">여름 성수기 냉동 수산물 15% 할인</text>
+    <text x="24" y="106" font-size="13" fill="#6b7280">기간 08.10~08.24</text>
+    <rect x="24" y="128" width="100" height="32" rx="8" fill="#ffffff" stroke="#dcdfe4"/>
+    <text x="74" y="149" font-size="13" font-weight="600" fill="#1a1a1a" text-anchor="middle">상세보기</text>
+  </g>
+
+  <!-- 페이지네이션 (와이어프레임 3번 화면 하단) -->
+  <text x="600" y="424" font-size="13" fill="#6b7280" text-anchor="middle">[ 이전 ]  1  2  3  [ 다음 ]</text>
+</svg>
